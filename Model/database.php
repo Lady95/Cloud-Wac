@@ -4,8 +4,8 @@ class Database
     protected $server; 
     protected $user; 
     protected $pass;
-    private $options; 
-    protected $pdo;  
+    protected $options; 
+    public $pdo;  
 
     public function __construct(){
         $this->server = "mysql:host=localhost;dbname=my_cloud";
