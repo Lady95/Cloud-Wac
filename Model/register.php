@@ -1,7 +1,6 @@
 <?php
-require_once "database.php";
 
-class Users extends Database 
+class Users
 {
     protected $server; 
     protected $user; 
@@ -57,6 +56,65 @@ class Users extends Database
         }
     }
 
+    public function checkUser($username){
+        $query = $this->pdo->prepare("SELECT id_user ,email, username, firstname, lastname, email, active, password  FROM users WHERE username = :username"); 
+        $query->bindValue(':username', $username);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC);
+    } 
+
+    public function connexMembre($usernames) { 
+        session_start();
+        $result_login = $this->checkUser($usernames); 
+        $_SESSION['id'] = $result_login['id_user']; 
+        $_SESSION['email'] = $result_login['email'];
+        $_SESSION['username'] = $result_login['username']; 
+        $_SESSION['password'] = $result_login['password'];
+        $_SESSION['firstname'] = $result_login['firstname']; 
+        $_SESSION['lastname'] = $result_login['lastname'];
+    }
+
+    public function deactivate($id_user) {
+        $sql = $this->pdo->prepare("UPDATE users SET active = 0 WHERE id_user = :id_user");
+        $sql->bindValue(":id_user", $id_user);
+        $sql->execute();
+    }
+
+    public function updateUsername($username, $id_user){
+        $sql = $this->pdo->prepare("UPDATE users SET username = :username WHERE id_user = :id_user");
+        $sql->bindValue(":username", $username);
+        $sql->bindValue(":id_user", $id_user);
+        $sql->execute();
+    }
+
+    public function updateLastname($lastname, $id_user){
+        $sql = $this->pdo->prepare("UPDATE users SET lastname = :lastname WHERE id_user = :id_user");
+        $sql->bindValue(":lastname", $lastname);
+        $sql->bindValue(":id_user", $id_user);
+        $sql->execute();
+    }
+
+    public function updateFirstname($firstname, $id_user){
+        $sql = $this->pdo->prepare("UPDATE users SET firstname = :firstame WHERE id_user = :id_user");
+        $sql->bindValue(":firstname", $firstname);
+        $sql->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+        $sql->execute();
+    }
+
+
+    public function updateEmail($email, $id_user){
+        $sql = $this->pdo->prepare("UPDATE users SET email = :email WHERE id_user = :id_user");
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":id_user", $id_user);
+        $sql->execute();
+    }
+
+    public function updatePass($pass, $id_user){
+        $sql = $this->pdo->prepare("UPDATE users SET password = :password WHERE id_user = :id_user"); 
+        $sql->bindValue(":password", $pass);
+        $sql->bindValue(":id_user", $id_user);
+        $sql->execute();
+    }
 
 
 }

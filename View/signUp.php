@@ -1,4 +1,5 @@
-<?php ?>
+<?php include '../Controller/redirect_user.php';?>
+
 <!DOCTYPE html>
 <html>
     <head>

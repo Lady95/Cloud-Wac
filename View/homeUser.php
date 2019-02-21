@@ -1,13 +1,12 @@
-<?php include 'Controller/redirect_user_index.php'; ?>
-
+<?php include '../Controller/redirect_visit.php';?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My_Cloud - Home</title>
+        <title>My_Cloud - My Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -19,31 +18,35 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href=".">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="homeUser.php">My Cloud<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="View/logIn.php">Login</a>
+                        <a class="nav-link" href="../View/updateUser.php">Update my account</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="View/signUp.php">SignUp</a>
-                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="../View/signUp.php">SignUp</a>
+                    </li> -->
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline m-3 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
+                <a class="nav-link btn btn-danger text-white" href="../Controller/deconnexion.php">Deconnexion</a>
             </div>
         </nav>
        <main class="container mt-5">
-       
-        <div class="jumbotron m-auto">
-            <h1 class="text-center display-3">My Cloud</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <a class="btn btn-primary btn-lg btn-block"  href="View/logIn.php">Login</a>
-            <a class="btn btn-success btn-lg btn-block"  href="View/signUp.php">Sign Up </a
-        </div>
-       
+        <h1 class="mb-5">My Cloud</h1>
+
+            <table  class="table table-hover">
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">owner</th>
+                    <th scope="col">date upload</th>
+                </tr>
+            
+            </table>
+
        </main>
         
 

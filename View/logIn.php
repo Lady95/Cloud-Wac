@@ -1,3 +1,4 @@
+<?php include '../Controller/redirect_user.php';?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,18 +38,18 @@
             <div class="m-4">
                 <h1>Login</h1>
                 <div>
-                    <form class="mt-3" action="" method="post">
+                    <form class="mt-3" action="../Controller/login_c.php" method="post">
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username">
+                            <label for="username_login">Username</label>
+                            <input type="text" name="username_login" class="form-control" id="username_login">
                         </div>
 
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password">
+                            <label for="password_login">Password</label>
+                            <input type="password" name="password_login" class="form-control" id="password_login">
                         </div>
 
-                        <button type="button" class="btn btn-success btn-lg btn-block mt-2">Connect</button>
+                        <button type="submit" class="btn btn-success btn-lg btn-block mt-2">Connect</button>
                     </form>
                 </div>
                 <div class="m-3">

@@ -1,10 +1,8 @@
 <?php
-require_once('../Model/register.php');
+include'start.php';
 $errMSG = ""; 
 $empty = 0;
 $aValid = array('_', '-');
-
-$users = new Users();
 
 if(isset($_POST)){
 
