@@ -97,7 +97,7 @@ class Users
     public function updateFirstname($firstname, $id_user){
         $sql = $this->pdo->prepare("UPDATE users SET firstname = :firstame WHERE id_user = :id_user");
         $sql->bindValue(":firstname", $firstname);
-        $sql->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+        $sql->bindValue(":id_user", $id_user);
         $sql->execute();
     }
 

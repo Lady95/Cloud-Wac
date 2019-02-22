@@ -38,7 +38,7 @@
 
              <div class="border border-dark border-5 p-5 rounded m-5">
              <h3>Deactivate account</h3>
-               <a class="btn btn-lg btn-danger text-white deactivate" href="../Controller/deactivate.php">Deactivate</a>
+               <a class="btn btn-lg btn-danger text-white deactivate">Deactivate</a>
             </div>
 
             <div class="border border-dark border-5 p-5 rounded m-5">
@@ -46,7 +46,8 @@
 
                 <div class="alert alert-info hide" id="display-info"></div>
 
-                <form id="update-info" action="../Controller/update_info.php" method="post">
+                <form id="update-info" method="post"> 
+                <!-- action="../Controller/update_info.php" -->
                     <div class="form-group">
                         <label for="new_lastname">Lastname</label>
                         <input type="text" class="form-control" name="new_lastname" id="new_lastname">
@@ -93,6 +94,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../assets/update_info.js"></script>
-    <script src="../assets/scripts/update_pass.js"></script>
-    <script src="../assets/scripts/deactivate.js"></script>
+    <script src="../assets/update_pass.js"></script>
+    <script src="../assets/deactivate.js"></script>
 </html>

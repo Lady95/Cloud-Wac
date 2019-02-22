@@ -1,9 +1,10 @@
 <?php
-require_once '../start.php';
+require_once 'start.php';
+include 'connect.php';
 $errMSG = ""; 
 /*--Check Login pass--*/
 
-$password = $users->getInfoUser($_SESSION['id_user']);
+$password = $users->checkUser($_SESSION['username']);
 
 /**--Check password match--*/
 if(isset($_POST)){
@@ -16,7 +17,7 @@ if(isset($_POST)){
 
     if(empty($errMSG)){
         echo json_encode(true); 
-        $users->updatePass(hash('ripemd160',$_POST['password_updt'] . "si tu aimes la wac tape dans tes mains"), $_SESSION['id_user']);
+        $users->updatePass( password_hash($_POST['password_updt'], PASSWORD_DEFAULT), $_SESSION['id']);
         exit;
     } else {
         echo json_encode($errMSG); 

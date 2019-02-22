@@ -13,7 +13,7 @@ if(isset($_POST)){
         } 
     }
     if($verifpassword == false){
-        $errorMSG .= "<li>Email or password incorrect</li>";
+        $errorMSG .= "<li>Username or password incorrect</li>";
     }
 
     if($info_user['active'] == 0){
@@ -21,8 +21,9 @@ if(isset($_POST)){
     }
 }
 if(empty($errorMSG)){
+    echo json_encode(true); 
     $users->connexMembre($info_user['username']);
-    header("Location: ../View/homeUser.php"); 
+    //header("Location: ../View/homeUser.php"); 
 } else {
-    echo $errorMSG; 
+    echo json_encode($errorMSG); 
 }

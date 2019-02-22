@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#update-info").submit(function(event){
-        //event.preventDefault(); 
+        event.preventDefault(); 
         $.ajax({
             type : "POST", 
             url: "../Controller/update_info.php", 
