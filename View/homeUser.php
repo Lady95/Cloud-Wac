@@ -8,6 +8,7 @@
         <title>My_Cloud - My Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -32,7 +33,7 @@
                 <a class="nav-link btn btn-danger text-white" href="../Controller/deconnexion.php">Deconnexion</a>
             </div>
         </nav>
-       <main class="container mt-5">
+       <main class="container mt-5 mb-5">
             <h1 class="mb-5">My Cloud</h1>
 
             <section class=" border border-dark border-5 p-5 rounded mb-2">
@@ -46,17 +47,38 @@
             <section class=" mt-5">
 
                 <h3>Upload files</h3>
-                <table class="table table-hover">
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">owner</th>
-                        <th scope="col">date upload</th>
-                    </tr>
+                <div class="hide alert alert-danger mt-3" id="display-error"></div>
+                <div class="hide alert alert-success mt-3" id="display-success"></div>
+                    <form id="uploadForm" method="post" action="../Controller/upload.php" enctype="multipart/form-data">
+                        <div class="form-row">
+                            <label class="m-1" for="upload_item">Upload</label>
+                            <input type="file" name="upload_item" id="upload_item" multiple>
+                        </div>
+                       
+                        <button type="submit" name="submit" class="btn btn-primary m-3">Upload</button>
+                    </form>
+
+                <table id="tab_upload" class="table table-hover mb-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">id File</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">type</th>
+                            <th scope="col">path</th>
+                        </tr>
+                    </thead>
+                    <tbody id="filesUpload"></tbody>
+                    
                 </table>
             </section>
        </main>
-       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../assets/homeUser.js"></script>
     </body>
 </html>

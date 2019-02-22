@@ -23,7 +23,6 @@ if(isset($_POST)){
 if(empty($errorMSG)){
     echo json_encode(true); 
     $users->connexMembre($info_user['username']);
-    //header("Location: ../View/homeUser.php"); 
 } else {
     echo json_encode($errorMSG); 
 }

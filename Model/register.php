@@ -116,5 +116,23 @@ class Users
         $sql->execute();
     }
 
+    public function addfile($id_user, $name, $type, $size, $path){
+        $sql= $this->pdo->prepare("INSERT INTO upload_files (id_user, name, type, size, path) VALUES (:id_user, :name, :type, :size, :path)");
+        $sql->bindValue(":id_user", $id_user);
+        $sql->bindValue(":name", $name);
+        $sql->bindValue(":name", $name);
+        $sql->bindValue(":type", $type);
+        $sql->bindValue(":size", $size);
+        $sql->bindValue(":path", $path);
+        $sql->execute();
+    }
+
+    public function getFiles($id_user){
+        $sql= $this->pdo->prepare("SELECT * FROM upload_files WHERE id_user = :id_user"); 
+        $sql->bindValue(":id_user", $id_user); 
+        $sql->execute(); 
+        return $sql->fetchAll(); 
+    }
+
 
 }
