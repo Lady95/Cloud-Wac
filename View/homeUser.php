@@ -61,10 +61,10 @@
                 <table id="tab_upload" class="table table-hover mb-5">
                     <thead>
                         <tr>
-                            <th scope="col">id File</th>
+                            <th scope="col">Id File</th>
                             <th scope="col">Name</th>
-                            <th scope="col">type</th>
-                            <th scope="col">path</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Path</th>
                         </tr>
                     </thead>
                     <tbody id="filesUpload"></tbody>
