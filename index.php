@@ -38,7 +38,7 @@
        
         <div class="jumbotron m-auto">
             <h1 class="text-center display-3">My Cloud</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <p class="lead text-center">Welcome to My Cloud</p>
             <hr class="my-4">
             <a class="btn btn-primary btn-lg btn-block"  href="View/logIn.php">Login</a>
             <a class="btn btn-success btn-lg btn-block"  href="View/signUp.php">Sign Up </a
